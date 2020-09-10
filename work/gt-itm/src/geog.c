@@ -6,6 +6,8 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /* #include <sys/types.h>		for NBBY */
 /* instead define as foll */
 #ifndef NBBY
@@ -168,6 +170,7 @@ register i,j;
 Graph *G;
 Vertex *up,*vp;
 char namestr[128];
+srand(time(NULL));
 
     gb_trouble_code = 0;
 
@@ -252,10 +255,10 @@ char namestr[128];
 		die("Bad edge method in geo()!");
 	    }
 
-	    double rand = (double) rand()/RAND_MAX;
-	    if (rand < p){
+	    double random = (double) rand()/RAND_MAX;
+	    if (random < p){
 	    	// printf("%f, %f\n", rand, p);
-		gb_new_edge(up,vp,(int)rint(d));
+			gb_new_edge(up,vp,(int)rint(d));
 	    }
 		
 	}
